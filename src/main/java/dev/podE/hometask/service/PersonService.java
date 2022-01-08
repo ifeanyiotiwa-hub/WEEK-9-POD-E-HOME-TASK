@@ -1,4 +1,9 @@
 package dev.podE.hometask.service;
 
-public class PersonService {
+import dev.podE.hometask.model.Person;
+
+public interface PersonService {
+
+    // Emeka Chuwudozie
+    void savePerson(Person person);
 }
