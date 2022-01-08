@@ -19,7 +19,7 @@ public class PersonRepository {
     }
 
     public int savePerson(Person person) {
-        String sql = "INSERT INTO PERSON (ID, First_name, Last_name, Email, Password, Nationality, Birth_date) " +
+        String sql = "INSERT INTO person (ID, first_name, last_name, email, password, nationality, birth_date) " +
                 "VALUES (?, ?, ?, ?, ?, ?, ?)";
         return jdbcTemplate.update( sql, person.getId(), person.getFirstName(), person.getLastName(), person.getEmail(), person.getPassword(), person.getNationality(),
                 new Timestamp(person.getBirthDate().getTime()));
