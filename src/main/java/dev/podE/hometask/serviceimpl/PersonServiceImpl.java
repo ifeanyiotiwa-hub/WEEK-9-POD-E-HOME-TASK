@@ -4,7 +4,9 @@ import dev.podE.hometask.model.Person;
 import dev.podE.hometask.repository.PersonRepository;
 import dev.podE.hometask.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class PersonServiceImpl implements PersonService {
 
     // By Emeka Chukwudozie
