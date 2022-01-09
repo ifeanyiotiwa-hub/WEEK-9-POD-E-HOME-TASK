@@ -6,4 +6,8 @@ public interface PersonService {
 
     // Emeka Chuwudozie
     void savePerson(Person person);
+
+    void deletePerson(int id);
+
+    void updatePerson(Person person, int id);
 }

@@ -24,4 +24,16 @@ public class PersonServiceImpl implements PersonService {
         repository.savePerson(person);
         System.out.println(person.toString()+" Saved Successfully");
     }
+
+    @Override
+    public void deletePerson(int id) {
+        repository.deletePerson(id);
+    }
+
+    @Override
+    public void updatePerson(Person person,int id) {
+        person.setId(id);
+        repository.updatePerson(person);
+        System.out.println(person.toString()+"Updated successfully");
+    }
 }
