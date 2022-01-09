@@ -3,8 +3,7 @@ package dev.podE.hometask.controller;
 
 import dev.podE.hometask.model.Person;
 import dev.podE.hometask.service.PersonService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
+
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
