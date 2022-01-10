@@ -1,0 +1,20 @@
+
+
+${AnsiColor.CYAN}                                 PPPPPPPPPPPPPPPPP        OOOOOOOOO     DDDDDDDDDDDDD             EEEEEEEEEEEEEEEEEEEEEE
+${AnsiColor.CYAN}                                 P::::::::::::::::P     OO:::::::::OO   D::::::::::::DDD          E::::::::::::::::::::E
+${AnsiColor.CYAN}                                 P::::::PPPPPP:::::P  OO:::::::::::::OO D:::::::::::::::DD        E::::::::::::::::::::E
+                                 PP:::::P     P:::::PO:::::::OOO:::::::ODDD:::::DDDDD:::::D       EE::::::EEEEEEEEE::::E
+                                   P::::P     P:::::PO::::::O   O::::::O  D:::::D    D:::::D        E:::::E       EEEEEE
+                                   P::::P     P:::::PO:::::O     O:::::O  D:::::D     D:::::D       E:::::E
+                                   P::::PPPPPP:::::P O:::::O     O:::::O  D:::::D     D:::::D       E::::::EEEEEEEEEE
+                                   P:::::::::::::PP  O:::::O     O:::::O  D:::::D     D:::::D       E:::::::::::::::E
+                                   P::::PPPPPPPPP    O:::::O     O:::::O  D:::::D     D:::::D       E:::::::::::::::E
+                                   P::::P            O:::::O     O:::::O  D:::::D     D:::::D       E::::::EEEEEEEEEE
+                                   P::::P            O:::::O     O:::::O  D:::::D     D:::::D       E:::::E
+                                   P::::P            O::::::O   O::::::O  D:::::D    D:::::D        E:::::E       EEEEEE
+                                 PP::::::PP          O:::::::OOO:::::::ODDD:::::DDDDD:::::D       EE::::::EEEEEEEE:::::E
+${AnsiColor.CYAN}                                 P::::::::P           OO:::::::::::::OO D:::::::::::::::DD        E::::::::::::::::::::E
+${AnsiColor.CYAN}                                 P::::::::P             OO:::::::::OO   D::::::::::::DDD          E::::::::::::::::::::E
+${AnsiColor.CYAN}                                 PPPPPPPPPP               OOOOOOOOO     DDDDDDDDDDDDD             EEEEEEEEEEEEEEEEEEEEEE
+
+
