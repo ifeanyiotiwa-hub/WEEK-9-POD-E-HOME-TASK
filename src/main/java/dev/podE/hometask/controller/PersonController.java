@@ -1,10 +1,16 @@
 package dev.podE.hometask.controller;
 
 
+import dev.podE.hometask.ResponseData;
+import dev.podE.hometask.model.Subject;
 import dev.podE.hometask.model.Person;
 import dev.podE.hometask.service.PersonService;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.reactive.function.client.WebClient;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,9 +19,13 @@ import java.util.List;
 public class PersonController {
 
     private final PersonService personService;
+    private WebClient.Builder builder;
 
-    public PersonController(PersonService personService) {
+
+    @Autowired
+    public PersonController(PersonService personService,WebClient.Builder builder) {
         this.personService = personService;
+        this.builder=builder;
     }
 
 
@@ -36,12 +46,25 @@ public class PersonController {
         personService.updatePerson(person,id);
         return "person with the id of "+id+" updated";
     }
-    @GetMapping(path = "person/{id}")
-    public  String getPersonById(@PathVariable("id")int id){
-        Person person = new Person();
-        person.setId(id);
-        return person+" with id "+id+ " gotten from the DB";
+    @GetMapping( "/person/{id}/{subjects}")
+    public ResponseEntity<ResponseData> getPersonById(@PathVariable("id")int id, @PathVariable("subjects") String subjects){
+        Person person = personService.getPersonById(id);
+         ResponseData responseData = new ResponseData();
+
+        Subject subject = builder.build()
+                .get()
+                .uri("https://openlibrary.org/subjects/" + subjects + ".json")
+                .retrieve()
+                .bodyToMono(Subject.class)
+                .block();
+
+        responseData.setSubject(subject);
+        responseData.setPerson(person);
+        person.setKey(subject.getKey());
+//        return person;
+        return new ResponseEntity<>(responseData, HttpStatus.OK);
     }
+
 
     public List<Person> getAllPersons(){
         List<Person> personList = new ArrayList<>();

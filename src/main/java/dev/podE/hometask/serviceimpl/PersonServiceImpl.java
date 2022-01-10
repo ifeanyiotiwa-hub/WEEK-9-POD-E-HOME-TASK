@@ -36,4 +36,10 @@ public class PersonServiceImpl implements PersonService {
         repository.updatePerson(person);
         System.out.println(person.toString()+"Updated successfully");
     }
+
+    @Override
+    public Person getPersonById(int id) {
+//        person.setId(id);
+        return repository.getPersonById(id);
+    }
 }

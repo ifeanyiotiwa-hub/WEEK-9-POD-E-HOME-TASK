@@ -17,6 +17,7 @@ public class Person {
     private String password;
     private String nationality;
     private Date birthDate;
+    private String key;
 
 
 }

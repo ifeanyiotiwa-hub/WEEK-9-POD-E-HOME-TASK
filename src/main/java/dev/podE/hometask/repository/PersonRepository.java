@@ -2,6 +2,7 @@ package dev.podE.hometask.repository;
 
 import dev.podE.hometask.model.Person;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -20,7 +21,6 @@ public class PersonRepository {
     public int savePerson(Person person) {
         String sql = "INSERT INTO person (first_name, last_name, email, password, nationality, birth_date) " +
                 "VALUES (?, ?, ?, ?, ?, ?)";
-
         return jdbcTemplate.update( sql, person.getFirstName(), person.getLastName(), person.getEmail(), person.getPassword(), person.getNationality(),
                 person.getBirthDate());
     }
@@ -36,6 +36,11 @@ public class PersonRepository {
         Object [] params = {person.getFirstName(), person.getLastName(), person.getEmail(), person.getPassword(), person.getNationality(),
                 person.getBirthDate(),person.getId()};
         jdbcTemplate.update(sql,params);
+    }
+
+    public Person getPersonById(int id){
+        String sql = "SELECT * FROM person WHERE id=?";
+        return jdbcTemplate.queryForObject(sql, BeanPropertyRowMapper.newInstance(Person.class),id);
     }
 
 }

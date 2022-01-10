@@ -10,4 +10,6 @@ public interface PersonService {
     void deletePerson(int id);
 
     void updatePerson(Person person, int id);
+
+    Person getPersonById( int id);
 }
