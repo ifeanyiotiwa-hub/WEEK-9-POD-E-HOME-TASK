@@ -7,6 +7,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import java.sql.ResultSet;
+import java.util.List;
 
 @Repository
 public class PersonRepository {
@@ -41,6 +42,15 @@ public class PersonRepository {
     public Person getPersonById(int id){
         String sql = "SELECT * FROM person WHERE id=?";
         return jdbcTemplate.queryForObject(sql, BeanPropertyRowMapper.newInstance(Person.class),id);
+    }
+
+    public List<Person> getAllPersons() {
+
+        return jdbcTemplate.query(
+                "SELECT * FROM person",
+                (rs, rowNum) -> new Person(rs.getInt("id"), rs.getString("first_name"),
+                        rs.getString("last_name"), rs.getString("email"), "*******",
+                        rs.getString("nationality"), rs.getDate("birth_date")));
     }
 
 }
