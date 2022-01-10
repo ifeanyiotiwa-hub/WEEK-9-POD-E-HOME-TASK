@@ -61,6 +61,7 @@ public class PersonController {
 
         responseData.setSubject(subject);
         responseData.setPerson(person);
+        Objects.requireNonNull(subject);
         person.setKey(subject.getKey());
         return new ResponseEntity<>(responseData, HttpStatus.OK);
     }
