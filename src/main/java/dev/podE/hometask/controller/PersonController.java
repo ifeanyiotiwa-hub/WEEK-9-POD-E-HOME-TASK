@@ -14,6 +14,7 @@ import org.springframework.web.reactive.function.client.WebClient;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @RestController
 public class PersonController {
@@ -65,8 +66,8 @@ public class PersonController {
     }
 
 
+    @GetMapping("/person")
     public List<Person> getAllPersons(){
-        List<Person> personList = new ArrayList<>();
-        return  personList;
+        return personService.getPersons();
     }
 }
