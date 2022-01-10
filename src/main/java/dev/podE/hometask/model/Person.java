@@ -20,4 +20,13 @@ public class Person {
     private String key;
 
 
+    public Person(int id, String firstName, String lastName, String email, String password,String nationality, Date birthDate) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.password = password;
+        this.nationality = nationality;
+        this.birthDate = birthDate;
+    }
 }
