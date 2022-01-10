@@ -1,7 +1,7 @@
 package dev.podE.hometask.controller;
 
 
-import dev.podE.hometask.ResponseData;
+import dev.podE.hometask.response.ResponseData;
 import dev.podE.hometask.model.Subject;
 import dev.podE.hometask.model.Person;
 import dev.podE.hometask.service.PersonService;
