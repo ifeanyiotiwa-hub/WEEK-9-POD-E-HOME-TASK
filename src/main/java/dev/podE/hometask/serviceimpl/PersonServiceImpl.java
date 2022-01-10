@@ -6,6 +6,8 @@ import dev.podE.hometask.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class PersonServiceImpl implements PersonService {
 
@@ -39,7 +41,11 @@ public class PersonServiceImpl implements PersonService {
 
     @Override
     public Person getPersonById(int id) {
-//        person.setId(id);
         return repository.getPersonById(id);
+    }
+
+    @Override
+    public List<Person> getPersons() {
+        return repository.getAllPersons();
     }
 }
