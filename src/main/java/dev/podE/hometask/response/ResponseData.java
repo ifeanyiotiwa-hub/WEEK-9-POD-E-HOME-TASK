@@ -1,4 +1,4 @@
-package dev.podE.hometask;
+package dev.podE.hometask.response;
 
 import dev.podE.hometask.model.Person;
 import dev.podE.hometask.model.Subject;
